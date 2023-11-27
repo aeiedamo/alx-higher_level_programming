@@ -2,19 +2,17 @@
 
 int check_cycle(listint_t *list)
 {
-        listint_t *curr, *chk;
+        listint_t *chk;
 
         if (!list || !list->next)
                 return (0);
 
-        for (curr = list, chk = curr->next; 
-                curr && chk->next && chk->next->next; curr = curr->next,
+        for (chk = list->next; 
+                list && chk->next && chk->next->next; list = list->next,
                 chk = chk->next->next)
         {
-                if (curr == chk)
+                if (list == chk)
                         return (1);
-                curr = curr->next;
-                chk = chk->next->next;
         }
 
         return (0);
