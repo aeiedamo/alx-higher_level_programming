@@ -7,7 +7,7 @@ else:
     mod = (-1 * number) % 10
 print("Last digit of", number, "is", end=" ")
 if number < 0:
-    print("-", end="")
+    mod *= -1
 print(mod, end=" ")
 if mod > 5:
     print("and is greater than 5")
