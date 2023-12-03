@@ -6,3 +6,4 @@ def no_c(my_string):
             if i not in "Cc":
                 new += i
         return (new)
+    return (my_string)
