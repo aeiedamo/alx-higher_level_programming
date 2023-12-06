@@ -6,4 +6,3 @@ def search_replace(my_list, search, replace):
         else:
             return replace
     return (list(map(find, my_list)))
-
