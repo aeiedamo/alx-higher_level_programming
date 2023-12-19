@@ -15,6 +15,7 @@ class Square:
         Args:
             size: length of square
         """
+        self.__size = size
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif (size < 0):
