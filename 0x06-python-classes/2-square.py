@@ -9,13 +9,15 @@ class Square:
         size: length of square
     """
 
+
     def __init__(self, size):
         """
         initailizing for square
         Args:
             size: length of square
         """
-        self.__size = size
+
+        
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif (size < 0):
