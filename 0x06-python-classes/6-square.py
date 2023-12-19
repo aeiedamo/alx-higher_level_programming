@@ -44,7 +44,7 @@ class Square:
         a function to retreive position
         Return: position of square
         """
-        return (self._position_)
+        return (self.__position)
 
     @size.setter
     def size(self, value):
@@ -83,8 +83,8 @@ class Square:
             print()
         else:
             for i in range(self.__size):
-                for j in range(self._position_[0]):
+                for j in range(self.__position[0]):
                     print(end=" ")
                 print("#"*self.__size)
-            for k in range(self.position[1]):
+            for k in range(self.__position[1]):
                 print()
