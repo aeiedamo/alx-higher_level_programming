@@ -1,6 +1,3 @@
 #!/usr/bin/python3
 class Square:
-    '''
-    empty "Square" class
-    '''
-    pass
+    """ empty Square class """
