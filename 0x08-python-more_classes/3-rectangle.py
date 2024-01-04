@@ -41,3 +41,24 @@ class Rectangle:
         elif value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+    def __str__(self) -> str:
+        """Returns a representation for a Rectangle in text"""
+        total = ""
+        if self.__width == 0 or self.__height == 0:
+            return total
+        for i in range(self.__height):
+            total += "#" * self.__width
+            if i != self.__height - 1:
+                total += "\n"
+        return total
+
+    def area(self):
+        """Getter for area value"""
+        return self.__width * self.__height
+
+    def perimeter(self):
+        """Getter for perimeter value"""
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return (self.__width + self.__height) * 2
