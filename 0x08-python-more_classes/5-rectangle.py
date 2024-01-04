@@ -11,7 +11,6 @@ class Rectangle:
     """
 
     def __init__(self, width=0, height=0):
-        """Initialize data components"""
         super(Rectangle, self).__init__()
         self.__width = width
         self.__height = height
@@ -37,9 +36,36 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """Setter function for height"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         elif value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
+    def __repr__(self) -> str:
+        return "Rectangle({}, {})".format(self.__width, self.__height)
+
+    def __str__(self) -> str:
+        """Returns a representation for a Rectangle in text"""
+        total = ""
+        if self.__width == 0 or self.__height == 0:
+            return total
+        for i in range(self.__height):
+            total += "#" * self.__width
+            if i != self.__height - 1:
+                total += "\n"
+        return total
+
+    def area(self):
+        """Getter for area value"""
+        return self.__width * self.__height
+
+    def perimeter(self):
+        """Getter for perimeter value"""
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return (self.__width + self.__height) * 2
+
+    def __del__(self):
+        """function for a class to delete its self"""
+        print("Bye rectangle...")
