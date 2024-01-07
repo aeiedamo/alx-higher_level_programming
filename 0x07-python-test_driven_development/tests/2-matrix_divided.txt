@@ -1,0 +1,108 @@
+The "2-matrix_divided" module
+=============================
+
+Using "matrix_divided" module
+-----------------------------
+
+Import the module:
+  >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Test Normal:
+  >>> matrix = [
+  ...     [1, 2, 3],
+  ...     [4, 5, 6]
+  ... ]
+  >>> matrix_divided(matrix, 3)
+  [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Test 1 row matrix:
+  >>> matrix = [[9384, 534, 234]]
+  >>> matrix_divided(matrix, 3)
+  [[3128.0, 178.0, 78.0]]
+
+Test 3 rows:
+  >>> matrix = [[9384, 534, 234], [72463784,2312,45343], [94788357,345345,345345]]
+  >>> matrix_divided(matrix, 3)
+  [[3128.0, 178.0, 78.0], [24154594.67, 770.67, 15114.33], [31596119.0, 115115.0, 115115.0]]
+
+Test 1 dimensional matrix:
+  >>> matrix = [7398645, 34578934, 24357834]
+  >>> matrix_divided(matrix, 3)
+  Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    File "/home/alaa/Code/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 30, in matrix_divided
+      raise TypeError(
+  TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test 3 dimensional matrix:
+  >>> matrix = [[[345345, 435345, 3645654]]]
+  >>> matrix_divided(matrix, 3)
+  Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    File "/home/alaa/Code/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 35, in matrix_divided
+      raise TypeError(
+  TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test a division by 0:
+  >>> matrix = [[35973985, 49578735, 3598654], [34789, 394573, 349578934]]
+  >>> matrix_divided(matrix, 0)
+  Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    File "/home/alaa/Code/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 25, in matrix_divided
+      raise ZeroDivisionError("division by zero")
+  ZeroDivisionError: division by zero
+
+Test a 2 unequal rows:
+  >>> matrix = [[35973985, 49578735, 3598654], [34789, 394573]]
+  >>> matrix_divided(matrix, 10)
+  Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    File "/home/alaa/Code/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 41, in matrix_divided
+      raise TypeError("Each row of the matrix must have the same size")
+  TypeError: Each row of the matrix must have the same size
+
+Test NaN:
+  >>> matrix_divided('NaN', 10)
+  Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    File "/home/alaa/Code/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 27, in matrix_divided
+      raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+  TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test Empty list:
+  >>> matrix_divided([[]], 10)
+  Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    File "/home/alaa/Code/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 27, in matrix_divided
+      raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+  TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Test division by a float:
+  >>> matrix_divided([[36853, 435879, 3458958]], 9.9)
+  [[3722.53, 44028.18, 349389.7]]
+
+Test input True as a number:
+  >>> matrix = [[39285793485, 34992759385, 345738579348], [13, 45, 123]]
+  >>> matrix_divided(matrix, True)
+  [[39285793485.0, 34992759385.0, 345738579348.0], [13.0, 45.0, 123.0]]
+
+Test input False as a number:
+  >>> matrix = [[39285793485, 34992759385, 345738579348], [13, 45, 123]]
+  >>> matrix_divided(matrix, False)
+  Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    File "/home/alaa/Code/alx-higher_level_programming/0x07-python-test_driven_development/2-matrix_divided.py", line 25, in matrix_divided
+      raise ZeroDivisionError("division by zero")
+  ZeroDivisionError: division by zero
+
+Test no args:
+  >>> matrix_divided()
+  Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+  TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+Test 1 arg:
+  >>> matrix_divided([[893576834, 945783, 43576]], )
+  Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+  TypeError: matrix_divided() missing 1 required positional argument: 'div'

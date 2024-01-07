@@ -1,0 +1,49 @@
+The "4-print_square" Module
+===========================
+
+using "print_square" Module
+---------------------------
+
+Import the Module:
+  >>> print_square = __import__('4-print_square').print_square
+
+Test with 1 as a size:
+  >>> print_square(1)
+  #
+
+Test with 10 as a size:
+  >>> print_square(10)
+  ##########
+  ##########
+  ##########
+  ##########
+  ##########
+  ##########
+  ##########
+  ##########
+  ##########
+  ##########
+
+Test with 0:
+  >>> print_square(0)
+
+Test with 9.9:
+  >>> print_square(9.9)
+  Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    File "/home/alaa/Code/alx-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 21, in print_square
+      raise TypeError("size must be an integer")
+  TypeError: size must be an integer
+
+Test with True:
+  >>> print_square(True)
+  #
+
+Test with NaN:
+  >>> print_square('NaN')
+  Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    File "/home/alaa/Code/alx-higher_level_programming/0x07-python-test_driven_development/4-print_square.py", line 21, in print_square
+      raise TypeError("size must be an integer")
+  TypeError: size must be an integer
+
