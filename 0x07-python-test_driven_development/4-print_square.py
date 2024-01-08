@@ -14,7 +14,8 @@ def print_square(size):
     Raises:
         TypeError: exception with the message size must be an integer
         ValueError: exception with the message size must be >= 0
-        TypeError: exception with the message size must be an integer if size is float
+        TypeError: exception with the message size must be an integer
+         if size is float
     """
 
     if not isinstance(size, int):

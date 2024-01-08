@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 """
-text_indentation: Write a function that prints a text with 2 new lines after each of these characters: ., ? and :
+text_indentation: Write a function that prints a text with 2 new lines after
+ each of these characters: ., ? and :
 """
 
 
 def text_indentation(text):
     """
-    a function that prints a text with 2 new lines after each of these characters: ., ? and :
+    a function that prints a text with 2 new lines after each of these
+      characters: ., ? and :
     Args:
         text: text to process
     Returns:
@@ -20,6 +22,7 @@ def text_indentation(text):
 
     delimit = ".?:"
     for item in delimit:
-        text = (item + "\n\n").join([line.strip(" ") for line in text.split(item)])
+        tobejoin = [line.strip(" ") for line in text.split(item)]
+        text = (item + "\n\n").join(tobejoin)
 
     print(text, end="")
