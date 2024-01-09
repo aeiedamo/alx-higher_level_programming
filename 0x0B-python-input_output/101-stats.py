@@ -1,14 +1,13 @@
 #!/usr/bin/python3
-"""a script that reads stdin line by line and computes metrics"""
+"""Module for log parsing script."""
 import sys
-
 
 if __name__ == "__main__":
     size = [0]
     codes = {200: 0, 301: 0, 400: 0, 401: 0, 403: 0, 404: 0, 405: 0, 500: 0}
 
-    def check(line):
-        """check for registry exeception match in line"""
+    def check_match(line):
+        """Checks for regexp match in line."""
         try:
             line = line[:-1]
             words = line.split(" ")
@@ -16,20 +15,20 @@ if __name__ == "__main__":
             code = int(words[-2])
             if code in codes:
                 codes[code] += 1
-        except Exception:
+        except:
             pass
 
     def print_stats():
-        """print accumlated stats"""
-        print("File Size: {}".format(size[0]))
-        for key in sorted(codes.keys()):
-            if codes[key]:
-                print("{}: {}".format(key, codes[key]))
+        """Prints accumulated statistics."""
+        print("File size: {}".format(size[0]))
+        for k in sorted(codes.keys()):
+            if codes[k]:
+                print("{}: {}".format(k, codes[k]))
 
     i = 1
     try:
         for line in sys.stdin:
-            check(line)
+            check_match(line)
             if i % 10 == 0:
                 print_stats()
             i += 1
