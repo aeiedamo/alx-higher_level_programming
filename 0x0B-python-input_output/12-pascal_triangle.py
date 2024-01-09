@@ -18,8 +18,8 @@ def comb(i, j):
 def pascal_triangle(n):
     """returns a list of lists of integers representing
     the Pascal’s triangle of n"""
-    pascal_numbers = [[]]
-    if (n == 0):
+    pascal_numbers = []
+    if n <= 0:
         return pascal_numbers
     for i in range(n):
         row = []
