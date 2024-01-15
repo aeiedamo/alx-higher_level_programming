@@ -2,6 +2,8 @@
 """creating a Class base"""
 import json
 from os.path import isfile
+from turtle import begin_fill
+from typing_extensions import Self
 import unittest
 
 
@@ -69,3 +71,42 @@ class Base:
             return []
         with open(filename, "r") as f:
             return [cls.create(**el) for el in cls.from_json_string(f.read())]
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """saves Rectangles/Squares to csv"""
+        from models.rectangle import Rectangle
+        from models.square import Square
+        import csv
+
+        if list_objs is not None:
+            if cls is Rectangle:
+                list_objs = [[el.id, el.width, el.x, el.y] for el in list_objs]
+            elif cls is Square:
+                list_objs = [[el.id, el.size, el.x, el.y] for el in list_objs]
+        with open(
+            "{}.csv".format(cls.__name__),
+            "w",
+            newline="",
+        ) as f:
+            writer = csv.writer(f)
+            writer.writerow(list_objs)
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """opens a window and draws all the Rectangles and Squares"""
+        import turtle
+        import time
+
+        for i in list_rectangles + list_squares:
+            el = turtle.Turtle()
+            el.color("#800020")
+            el.pensize(10)
+            for j in range(2):
+                el.hideturtle()
+                el.forward(i.width)
+                el.right(90)
+                el.forward(i.height)
+                el.right(90)
+            el.reset()
+            time.sleep(2)
