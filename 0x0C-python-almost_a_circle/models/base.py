@@ -1,9 +1,6 @@
 #!/usr/bin/python3
 """creating a Class base"""
 import json
-from os.path import isfile
-from turtle import begin_fill
-from typing_extensions import Self
 import unittest
 
 
