@@ -1,2 +1,2 @@
 -- a script that deletes the database hbtn_0c_0 in your MySQL server.
-Drop hbtn_0c_0;
+Drop DATABASE IF EXISTS first_table;
