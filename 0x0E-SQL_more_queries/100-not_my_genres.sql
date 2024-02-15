@@ -1,4 +1,4 @@
-ELECT name
+SELECT name
 FROM tv_genres
 WHERE name NOT IN
 (SELECT name
