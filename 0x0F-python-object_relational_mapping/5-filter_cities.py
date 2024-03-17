@@ -18,11 +18,12 @@ if __name__ == "__main__":
     )
     current = db.cursor()
     current.execute(
-        """SELECT cities.id, cities.name, states.name FROM cities
-        INNER JOIN states ON states.id=cities.state_id"""
+        """SELECT cities.name FROM cities INNER JOIN states
+        ON states.id=cities.state_id WHERE states.name=%s""",
+        (sys.argv[4],),
     )
     rows = current.fetchall()
-    for row in rows:
-        print(row)
+    tmp = list(row[0] for row in rows)
+    print(*tmp, sep=", ")
     current.close()
     db.close()
