@@ -20,7 +20,7 @@ if __name__ == "__main__":
     userinput = sys.argv[4]
     current.execute(
         """SELECT cities.id, cities.name, states.name FROM cities
-        INNER JOIN states ON states.id=cities.states_id"""
+        INNER JOIN states ON states.id=cities.state_id"""
     )
     rows = current.fetchall()
     for row in rows:

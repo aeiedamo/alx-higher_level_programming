@@ -18,7 +18,7 @@ if __name__ == "__main__":
     )
     current = db.cursor()
     userinput = sys.argv[4]
-    current.execute("SELECT * FROM states WHERE name LIKE BINARY %s", (userinput,))
+    current.execute("SELECT * FROM states WHERE name LIKE %s", (userinput,))
     rows = current.fetchall()
     for row in rows:
         print(row)
