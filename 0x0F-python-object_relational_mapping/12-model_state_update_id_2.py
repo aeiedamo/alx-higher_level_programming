@@ -18,6 +18,6 @@ if __name__ == "__main__":
     Base.metadata.create_all(eng)
     Session = sessionmaker(bind=eng)
     session = Session()
-    ins = session.query(State).filter(id=2).first()
+    ins = session.query(State).filter_by(id=2).first()
     ins.name = "New Mexico"
     session.commit()

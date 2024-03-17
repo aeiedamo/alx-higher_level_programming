@@ -20,6 +20,6 @@ if __name__ == "__main__":
     session = Session()
     louisiana = State(name="Louisiana")
     session.add(louisiana)
-    ins = session.query(State).filter(name="Louisiana").first()
+    ins = session.query(State).filter_by(name="Louisiana").first()
     print(ins.id)
     session.commit()
