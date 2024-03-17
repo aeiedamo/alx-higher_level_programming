@@ -18,5 +18,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(eng)
     Session = sessionmaker(bind=eng)
     session = Session()
-    for ins in session.query(State).order_by(State.id):
+    ins = session.query(State).first()
+    if ins is None:
+        print("Nothing")
+    else:
         print(ins.id, ins.name, sep=": ")
