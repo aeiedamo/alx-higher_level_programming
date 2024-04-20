@@ -1,10 +1,10 @@
 #!/usr/bin/node
 
-const SquareA = require("./5-square");
+const SquareA = require('./5-square');
 
 class Square extends SquareA {
-  charPrint(c) {
-    if (!c) c = "X";
+  charPrint (c) {
+    if (!c) c = 'X';
     for (let i = 0; i < this.height; i++) {
       console.log(c.repeat(this.width));
     }
