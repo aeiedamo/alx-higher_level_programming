@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const { dict } = require("./101-data.js");
+const { dict } = require('./101-data.js');
 
 const dictFromArr = Object.entries(dict);
 
