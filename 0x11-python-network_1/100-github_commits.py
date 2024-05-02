@@ -25,5 +25,5 @@ if __name__ == "__main__":
         auth = commit.get("commit").get("author").get("name")
         print("{}: {}".format(sha256, auth))
         counter += 1
-        if counter >= 9:
+        if counter > 9:
             break
